@@ -42,13 +42,11 @@ def about_me():
         section_title("About Me"),
         div(css(font_size="large", margin_bottom="50px"))[
             p[
-                (
-                    "I recently graduated with a Bachelor's degree in Cognitive Computer Science at the University of Bielefeld "
-                    "and am now pursuing a Master's degree in Intelligent Interactive Systems. "
-                    "In my free time, I like to work on various projects, such as this website or small browser games."
-                )
+                "I recently graduated with a Bachelor's degree in Cognitive Computer Science at the University of Bielefeld "
+                "and am now pursuing a Master's degree in Intelligent Interactive Systems. "
+                "In my free time, I like to work on various projects, such as this website or small browser games."
             ],
-            p[f"I have previously worked as a student assistant at {a(href='https://www.kognihome.de/')['KogniHome']}, where I am developing a mobile application for {a(href='https://github.com/sharly-project')['SHARLY']}. Currently, I am working as a research assistant at the Social Cognitive Systems Group at the University of Bielefeld."],
+            p[f"I have previously worked as a student assistant at {a(href='https://www.kognihome.de/')['KogniHome']}, where I was developing a mobile application for {a(href='https://github.com/sharly-project')['SHARLY']}. Currently, I am working as a research assistant at the Social Cognitive Systems Group at the University of Bielefeld."],
             h1(css(font_weight="normal", margin_top="40px"))["Programming Languages / Technologies"],
             p["For my projects and at work, I mainly use the following programming languages and technologies:"],
             programming_lang_item("Kotlin + Ktor, Three.js, React, Compose Multiplatform", "icons/kotlin-logo.svg"),

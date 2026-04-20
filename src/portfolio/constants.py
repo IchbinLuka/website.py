@@ -8,5 +8,5 @@ SPACE_GAME_RELEASES: Final[str] = "https://github.com/IchbinLuka/space_game.rs/r
 RAYTRACER_SOURCE_CODE: Final[str] = "https://github.com/IchbinLuka/raytracer.rs"
 RUVOLA_SOURCE_CODE: Final[str] = "https://github.com/IchbinLuka/ruvola"
 
-WEBSITE_SOURCE_CODE_URL: Final[str] = "https://github.com/IchbinLuka/website"
+WEBSITE_SOURCE_CODE_URL: Final[str] = "https://github.com/IchbinLuka/website.py"
 CONTACT_EMAIL: Final[str] = "contact@lukaborn.de"

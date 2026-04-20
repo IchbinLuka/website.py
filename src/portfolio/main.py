@@ -54,9 +54,8 @@ def build_website():
     out_dir = PROJECT_ROOT / "out"
     out_dir.mkdir(exist_ok=True)
 
-    html_content = str(index())
     with open(out_dir / "index.html", "w") as f:
-        f.write(html_content)
+        f.write(index().render())
 
     # for file in os.listdir(ROOT / "resources"):
     shutil.copytree(ROOT / "resources", out_dir, dirs_exist_ok=True)

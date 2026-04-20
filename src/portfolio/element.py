@@ -53,3 +53,6 @@ class Element(metaclass=ElementMeta):
         else:
             self.slot.children = (children,)
         return self
+
+    def render(self) -> str:
+        return f"<!DOCTYPE html>\n{str(self)}"

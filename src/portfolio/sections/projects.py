@@ -17,6 +17,7 @@ from portfolio.constants import (
     SPACE_GAME_RELEASES,
     RAYTRACER_SOURCE_CODE,
     RUVOLA_SOURCE_CODE,
+    WEBSITE_SOURCE_CODE_URL,
 )
 from portfolio.html_dsl import a, div, img
 from portfolio.element import css
@@ -41,12 +42,10 @@ def work_projects():
                 )
             ],
         )[
-            "A web client for the Cooperative Cuisine Environment, developed by the "
-            "Social Cognitive Systems Group at Bielefeld University. This implementation "
-            "was written in TypeScript with PIXI.js for rendering and allows users to "
-            "interact with the environment directly from their browser. This opens the "
-            "possibility for online user studies and integrations into other study "
-            "platforms, such as oTree."
+            "A web client for the Cooperative Cuisine Environment, developed by the Social Cognitive Systems Group at ",
+            "Bielefeld University. This implementation was written in TypeScript with PIXI.js for rendering and",
+            "allows users to interact with the environment directly from their browser. This opens the possibility for",
+            "online user studies and integrations into other study platforms, such as oTree."
         ],
 
         project_element(
@@ -56,25 +55,24 @@ def work_projects():
                 source_code_interaction_item(link="https://github.com/IchbinLuka/p2p-uno"),
             ],
         )[
-            "A peer-to-peer clone of the popular UNO card game implemented with "
-            "TypeScript and React. To prevent cheating I designed a lightweight "
-            "cryptographic protocol that lets players prove card plays and draws "
-            "without revealing their hands. The networking is built on WebRTC data "
-            "channels to achieve true peer-to-peer communication between players."
+            "A peer-to-peer clone of the popular UNO game, implemented using TypeScript and React. ",
+            "To avoid cheating, I implemented a custom cryptographic protocol that allows players to verify card plays/draws without revealing their hand to the other players.",
+            " The P2P communication is done via WebRTC Datachannels to achieve true Peer-to-Peer communication."
         ],
 
         project_element(
             title="CoCu VoiceChat",
             image=None,
             interaction_items=[
-                source_code_interaction_item(link="https://gitlab.ub.uni-bielefeld.de/scs/cocosy/cocu-voicechat"),
+                source_code_interaction_item(
+                    link="https://gitlab.ub.uni-bielefeld.de/scs/cocosy/cocu-voicechat",
+                    host=SourceCodeHost.GITLAB,
+                ),
             ],
         )[
-            "A WebRTC-based voice chat system built for the Cooperative Cuisine Environment. "
-            "The project contains both client and server parts — clients for browser and Python "
-            "environments and a server implementation written in Python using FastAPI. "
-            "The server can be mounted into existing FastAPI apps, which makes integration "
-            "into research platforms straightforward."
+            "A Web-RTC based voice chat server & client implementation built for the Cooperative Cuisine Environment.",
+            " We provide the client implementation for both the Python and Browser ecosystems. ",
+            "The server is written in Python, using FastAPI and can also be directly mounted to your own FastAPI Apps."
         ],
 
         project_element(
@@ -82,15 +80,19 @@ def work_projects():
             image="images/bachelor_thesis_screenshot.png",
             interaction_items=[
                 InteractionItem(title="PDF", link="misc/bachelor_thesis.pdf", icon="icons/pdf-icon.svg"),
-                source_code_interaction_item(link="https://gitlab.ub.uni-bielefeld.de/IchbinLuka/coop_cuisine_ba"),
+                source_code_interaction_item(
+                    link="https://gitlab.ub.uni-bielefeld.de/IchbinLuka/coop_cuisine_ba",
+                    host=SourceCodeHost.GITLAB,
+                ),
             ],
         )[
-            "My Bachelor's thesis evaluated the performance of several reinforcement learning "
-            "algorithms in a simulated multi-agent environment. The work uses the ",
+            "My Bachelor's thesis in which I evaluated the performance of multiple reinforcement learning algorithms in",
+            " the ",
             a(href="https://gitlab.ub.uni-bielefeld.de/scs/cocosy/cooperative-cuisine")["Cooperative Cuisine Environment"],
-            ", similar to the game Overcooked, while incrementally increasing the complexity "
-            "of the environment across experiments. The thesis includes source code, algorithm "
-            "implementations and trained model weights — all available on the University's GitLab."
+            ", similar to the game Overcooked,",
+            " while incrementally increasing the complexity of the environment along various dimensions. ",
+            "The source code of the bachelor thesis, the algorithms, and the trained weights of the models are available",
+            " on the GitLab of the University of Bielefeld."
         ],
 
         project_element(
@@ -104,9 +106,9 @@ def work_projects():
                 InteractionItem(title="Blog Post", link=SESAM_ARTICLE_LINK, icon="icons/earth.svg"),
             ],
         )[
-            "In 2023, as part of a collaboration between Bielefeld University and Deutsche Telekom, "
-            "our student team developed SESAM — an access-management software for buildings. Our team "
-            "was one of the winning teams in the competition. The project was implemented with Java "
+            "In 2023, as part of a collaboration between Bielefeld University and Deutsche Telekom, ",
+            "our student team developed SESAM — an access-management software for buildings. Our team ",
+            "was one of the winning teams in the competition. The project was implemented with Java ",
             "(Spring Boot) on the backend and TypeScript + Vue on the frontend. ",
             a(href=SESAM_ARTICLE_LINK)["Read more"]
         ],
@@ -118,10 +120,11 @@ def work_projects():
                 source_code_interaction_item(link="https://github.com/interactive-sonification/pya/tree/feature-agen"),
             ],
         )[
-            "An extension to the Python audio library 'pya' that introduces Audio Generators (AGens). "
-            "AGens expose a composable, lazy-evaluated API for constructing audio signal graphs. The "
-            "extension enables convenient combinations of generators to build complex audio processing "
-            "trees and is available on the feature-agen branch of the pya repository."
+            f"An extension for the Python library {a(href="https://pypi.org/project/pya/")["pya"]}"
+            " that adds the concept of Audio Generators (AGens), which provide a simple and flexible way of generating audio signals."
+            " Pya_agen enables various ways of combining these generators, effectively"
+            " allowing for the creation of complex trees of nodes that are lazily evaluated on demand."
+            " This extension is now integrated into the base pya library on the feature-agen branch of the repository."
         ],
 
         project_element(
@@ -135,9 +138,9 @@ def work_projects():
                 ),
             ],
         )[
-            "A demonstrator intended to introduce middle-school learners to neural networks and "
-            "image processing. The app visualizes convolutions and CNN concepts in a playful way. "
-            "It was implemented using React and p5.js and is hosted on the KI-Akademie OWL website."
+            "A demonstrator aimed to introduce middle-school level learners into the world of Neural Networks and Image "
+            "Processing by providing a playful explanation of convolutions and Convolutional Neural Networks. "
+            "This application was written with React and p5.js and is available on the website of the KI-Akademie OWL."
         ],
     ]
 
@@ -155,12 +158,12 @@ def free_time_projects():
                 play_interaction_item(SPACE_GAME_URL),
             ],
         )[
-            "A small top-down space shooter in which you defend stations from enemy ships. Enemies "
-            "can drop power-ups such as shields, bombs, or turrets. The game is implemented in Rust "
-            "using the Bevy engine and features an online leaderboard for competitive play.",
-            " This game also features an online leaderboard, where you can compete with others for "
-            f"the highest score. The leaderboard server is written in Rust using {a(href='https://rocket.rs/')['Rocket']}.",
-            "The server source code is not public to avoid exposing anti-cheat mechanisms."
+            "A small top down space shooter game where you need to defend space stations from enemy ships."
+            " The enemies can drop power-ups like shields, bombs, or turrets, which can help you in your fight."
+            " I am making this game using Rust and the Bevy game engine."
+            " This game also features an online leaderboard, where you can compete with others for the highest score."
+            f" The server hosting the leaderboard is written in Rust with {a(href="https://rocket.rs/")["Rocket"]}"
+            ". The source code of the leaderboard server is not available to not expose the anti-cheat mechanisms."
         ],
 
         project_element(
@@ -170,9 +173,10 @@ def free_time_projects():
                 play_interaction_item(TANK_GAME_URL),
             ],
         )[
-            "A multiplayer browser game where you control a tank and battle other players in an arena. "
-            "The client uses Three.js, the codebase leverages Kotlin/JS, and the server is implemented "
-            "with Ktor. The game is available to play on my GitHub pages."
+            "A multiplayer browser game in which you control a tank and try to destroy other tanks.",
+            " It's built with Three.js and Kotlin/JS.",
+            " The server is also written in Kotlin and uses Ktor.",
+            " The source code is currently not public, however, you can play the game on my GitHub page."
         ],
 
         project_element(
@@ -182,9 +186,10 @@ def free_time_projects():
                 source_code_interaction_item(RUVOLA_SOURCE_CODE),
             ],
         )[
-            "RuVoLA is a terminal-based vocabulary learning tool that encourages typing practice rather than "
-            "recognition. Vocabulary is stored in TSV files to allow versioning with git. The app is written "
-            f"in Rust and uses the {a(href='https://ratatui.rs/')['ratatui']} TUI library. The source code is available on GitHub.",
+            "A simple TUI application for learning vocabulary by actually typing the words, contrary to tools like ",
+            "Anki or vocage. The vocabulary is stored in a simple TSV format, allowing it to be stored and managed using git. ",
+            f"This application is written in Rust and uses the {a(href="")["ratatui"]} library for the TUI. ",
+            "The source code is available on GitHub."
         ],
 
         project_element(
@@ -194,9 +199,9 @@ def free_time_projects():
                 source_code_interaction_item(RAYTRACER_SOURCE_CODE),
             ],
         )[
-            "A compact raytracer written in Rust (with WGSL for GPU shading). The implementation follows "
-            "'Ray Tracing in One Weekend' and demonstrates basic global illumination and material models. "
-            "Source code is available on GitHub."
+            "A simple raytracer written in Rust.",
+            " A Rust + WGSL implementation of Ray Tracing in One Weekend by Peter Shirley.",
+            " The source code is available on GitHub."
         ],
 
         project_element(
@@ -204,10 +209,11 @@ def free_time_projects():
             image="images/website_screenshot.png",
             interaction_items=[
                 InteractionItem(title="Open", link="/", icon="icons/earth.svg"),
+                source_code_interaction_item(link=WEBSITE_SOURCE_CODE_URL, host=SourceCodeHost.GITHUB),
             ],
         )[
-            "This website is implemented with Kotlin/JS and React. The backend uses Ktor. The site's source "
-            "code and related projects are available on my GitHub."
+            "This website was built using a custom Python DSL that directly generates the HTML code ahead of time"
+            ", avoiding the use of a templating engine, any external libraries, or JavaScript to be enabled at all"
         ],
 
         a(
