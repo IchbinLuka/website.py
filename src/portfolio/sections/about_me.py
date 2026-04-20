@@ -25,31 +25,9 @@ def programming_lang_item(text: str, icon: str):
     ]
 
 
-def programming_section():
-    items = [
-        "Kotlin",
-        "Ktor",
-        "Three.js",
-        "React",
-        "Compose Multiplatform",
-        "Python",
-        "Rust",
-        "Bevy",
-        "Dart",
-        "Flutter",
-        "Java",
-        "Spring Boot",
-        "Android",
-    ]
-
-    # grid with 3 columns (using a simple style representation consistent with the rest of the DSL)
-    children = tuple(div[item] for item in items)
-    return div(css(display="grid", grid_template_columns="repeat(3, auto)"))[*children]
-
-
 def about_me():
     return div[
-        section_title("About Me"),
+        section_title["About Me"],
         div(css(font_size="large", margin_bottom="50px"))[
             p[
                 "I recently graduated with a Bachelor's degree in Cognitive Computer Science at the University of Bielefeld "
@@ -79,7 +57,3 @@ def about_me():
             ],
         ],
     ]
-
-
-# Export a module-level value that's ready to be inserted into the page
-AboutMe = about_me()

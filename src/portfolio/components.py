@@ -3,14 +3,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
-from html_dsl.element import Child, Element, css
+from html_dsl.element import Child, Element, component, css
 from html_dsl.html import a, div, h1, img
 
 
-def section_title(title: Child):
-    return div(css(font_size="xxx-large", margin_bottom="20px", margin_top="30px"))[
-        title
-    ]
+@component
+def section_title():
+    return div(css(font_size="xxx-large", margin_bottom="20px", margin_top="30px"))
 
 
 def background():
@@ -47,6 +46,7 @@ class InteractionItem:
     icon: str
 
 
+@component
 def content_element() -> Element:
     return div(css(classes=["contentElement"]))
 
@@ -88,7 +88,9 @@ def download_interaction_item(link: str) -> InteractionItem:
 
 
 def project_element(
-    title: str, image: str | None, interaction_items: list[InteractionItem]
+    title: str,
+    image: str | None,
+    interaction_items: list[InteractionItem],
 ) -> Element:
     children: list[Child] = []
 
@@ -119,7 +121,7 @@ def project_element(
         )
     slot = div()
 
-    return content_element()[
+    return content_element[
         h1(css(margin_top=0))[title],
         *children,
         div(css(display="flex", flex_direction="row"))[*interaction_children],

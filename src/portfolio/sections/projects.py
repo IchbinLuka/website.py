@@ -31,7 +31,7 @@ SESAM_ARTICLE_LINK = (
 
 def work_projects():
     return div[
-        section_title("Work & Study Projects"),
+        section_title["Work & Study Projects"],
         project_element(
             title="Web Client for the Cooperative Cuisine Environment",
             image="images/cocu_web_screenshot.png",
@@ -153,7 +153,7 @@ def work_projects():
 
 def free_time_projects():
     return div[
-        section_title("Free Time Projects"),
+        section_title["Free Time Projects"],
         project_element(
             title="Space Game",
             image="images/space_game_screenshot.png",

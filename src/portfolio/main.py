@@ -48,7 +48,7 @@ def index():
                 href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&display=swap",
             ),
         ],
-        body[div[app()],],
+        body[div[app()]],
     ]
 
 
