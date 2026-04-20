@@ -3,12 +3,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
-from portfolio.element import Child, Element, css
-from portfolio.html_dsl import a, div, h1, img
+from html_dsl.element import Child, Element, css
+from html_dsl.html import a, div, h1, img
 
 
 def section_title(title: Child):
-    return div(css(font_size="xxx-large", margin_bottom="20px", margin_top="30px"))[title]
+    return div(css(font_size="xxx-large", margin_bottom="20px", margin_top="30px"))[
+        title
+    ]
 
 
 def background():
@@ -19,7 +21,9 @@ def background():
     """
     return div(css("backgroundContainer"))[
         background_circles(),
-        background_circles(style={"transform": "scale(-1, -1)", "min_height": "3000px"}),
+        background_circles(
+            style={"transform": "scale(-1, -1)", "min_height": "3000px"}
+        ),
     ]
 
 
@@ -32,10 +36,7 @@ def background_circles(style: dict[str, str] | None = None):
     st = style or {}
 
     return div(css("background", **st))[
-        *(
-            div(css("dot", animation_delay=f"{-delay}s"))
-            for delay in (1, 50, 120)
-        )
+        *(div(css("dot", animation_delay=f"{-delay}s")) for delay in (1, 50, 120))
     ]
 
 
@@ -59,7 +60,10 @@ class SourceCodeHost(Enum):
         return self.value
 
 
-def source_code_interaction_item(link: str, host: SourceCodeHost = SourceCodeHost.GITHUB) -> InteractionItem:
+def source_code_interaction_item(
+    link: str,
+    host: SourceCodeHost = SourceCodeHost.GITHUB,
+) -> InteractionItem:
     return InteractionItem(
         title="Source Code",
         link=link,
@@ -83,7 +87,9 @@ def download_interaction_item(link: str) -> InteractionItem:
     )
 
 
-def project_element(title: str, image: str | None, interaction_items: list[InteractionItem]) -> Element:
+def project_element(
+    title: str, image: str | None, interaction_items: list[InteractionItem]
+) -> Element:
     children: list[Child] = []
 
     # Optional image block
@@ -91,7 +97,12 @@ def project_element(title: str, image: str | None, interaction_items: list[Inter
         children.append(
             div(css(classes=["projectImage"], max_height="600px", text_align="center"))[
                 img(
-                    css(classes=["projectImage"], max_width="100%", min_width="500px", max_height="500px"),
+                    css(
+                        classes=["projectImage"],
+                        max_width="100%",
+                        min_width="500px",
+                        max_height="500px",
+                    ),
                     src=image,
                     alt=title,
                 )
@@ -112,5 +123,5 @@ def project_element(title: str, image: str | None, interaction_items: list[Inter
         h1(css(margin_top=0))[title],
         *children,
         div(css(display="flex", flex_direction="row"))[*interaction_children],
-        slot
+        slot,
     ].set_slot(slot)

@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import shutil
 
+from html_dsl.element import css
+from html_dsl.html import body, div, head, html, link, meta, title
+
+from portfolio import PROJECT_ROOT, ROOT
 from portfolio.components import background
-from portfolio.html_dsl import a, body, div, head, html, title, meta, link, script
-from portfolio.element import css
 from portfolio.sections.about_me import about_me
 from portfolio.sections.header import header_section
 from portfolio.sections.projects import projects
-from portfolio import PROJECT_ROOT, ROOT
 
 
 def app():
@@ -34,7 +35,10 @@ def index():
         head[
             meta(charset="UTF-8"),
             meta(name="viewport", content="width=device-width, initial-scale=1"),
-            meta(name="description", content="Homepage showcasing my activity, interests and experience"),
+            meta(
+                name="description",
+                content="Homepage showcasing my activity, interests and experience",
+            ),
             title["Luka Born"],
             link(rel="stylesheet", href="stylesheet.css"),
             link(rel="preconnect", href="https://fonts.googleapis.com"),
@@ -44,9 +48,7 @@ def index():
                 href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&display=swap",
             ),
         ],
-        body[
-            div[app()],
-        ],
+        body[div[app()],],
     ]
 
 
@@ -59,7 +61,6 @@ def build_website():
 
     # for file in os.listdir(ROOT / "resources"):
     shutil.copytree(ROOT / "resources", out_dir, dirs_exist_ok=True)
-
 
 
 def main():

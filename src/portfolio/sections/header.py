@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from portfolio.html_dsl import header, div, h1, img, a
-from portfolio.element import css
+from html_dsl.element import css
+from html_dsl.html import a, div, h1, header, img
+
 from portfolio.constants import GITHUB_PROFILE_URL
 
 
@@ -18,7 +19,11 @@ def header_section():
         )[
             h1(css(font_weight="normal"))["LUKA BORN"],
             a(href=GITHUB_PROFILE_URL)[
-                img(css(width="50px", height="50px"), src="icons/github-mark-white.svg", alt="Link to my GitHub profile")
+                img(
+                    css(width="50px", height="50px"),
+                    src="icons/github-mark-white.svg",
+                    alt="Link to my GitHub profile",
+                )
             ],
         ]
     ]
