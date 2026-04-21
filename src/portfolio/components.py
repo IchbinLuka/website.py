@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
-from html_dsl.element import Child, Element, component, css
+from html_dsl.element import Child, Element, Fragment, component, css
 from html_dsl.html import a, div, h1, img
 
 
@@ -48,7 +48,7 @@ class InteractionItem:
 
 @component
 def content_element() -> Element:
-    return div(css(classes=["contentElement"]))
+    return div(css("contentElement"))
 
 
 class SourceCodeHost(Enum):
@@ -97,10 +97,10 @@ def project_element(
     # Optional image block
     if image is not None:
         children.append(
-            div(css(classes=["projectImage"], max_height="600px", text_align="center"))[
+            div(css("projectImage", max_height="600px", text_align="center"))[
                 img(
                     css(
-                        classes=["projectImage"],
+                        "projectImage",
                         max_width="100%",
                         min_width="500px",
                         max_height="500px",
@@ -119,7 +119,7 @@ def project_element(
                 item.title,
             ]
         )
-    slot = div()
+    slot = Fragment()
 
     return content_element[
         h1(css(margin_top=0))[title],

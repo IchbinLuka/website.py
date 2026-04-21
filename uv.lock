@@ -5,7 +5,7 @@ requires-python = ">=3.13"
 [[package]]
 name = "html-dsl"
 version = "0.1.0"
-source = { git = "https://github.com/IchbinLuka/python-html-dsl.git#d488b9c0eba113131b40aae40a497dbbc668568e" }
+source = { git = "https://github.com/IchbinLuka/python-html-dsl.git#c2409d6a7164ef447aa90d17534a76c7b0ebde12" }
 
 [[package]]
 name = "portfolio"

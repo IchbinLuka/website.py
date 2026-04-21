@@ -220,7 +220,7 @@ def free_time_projects():
         ],
         a(
             css(
-                classes=["normalTextLink"],
+                "normalTextLink",
                 display="flex",
                 flex_direction="row",
                 align_items="center",
