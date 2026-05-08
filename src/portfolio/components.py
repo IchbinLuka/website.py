@@ -102,7 +102,7 @@ def project_element(
                     css(
                         "projectImage",
                         max_width="100%",
-                        min_width="500px",
+                        min_width="50%",
                         max_height="500px",
                     ),
                     src=image,
