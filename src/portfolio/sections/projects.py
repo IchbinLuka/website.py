@@ -179,10 +179,11 @@ def free_time_projects():
                 play_interaction_item(TANK_GAME_URL),
             ],
         )[
-            "A multiplayer browser game in which you control a tank and try to destroy other tanks.",
-            " It's built with Three.js and Kotlin/JS.",
-            " The server is also written in Kotlin and uses Ktor.",
-            " The source code is currently not public, however, you can play the game on my GitHub page.",
+            "A multiplayer browser game in which you control a tank and try to destroy other tanks."
+            " It's built with Three.js and Kotlin/JS."
+            " The server is also written in Kotlin and uses Ktor."
+            " The source code is public and the game can be played on my GitHub page. Note that the multiplayer"
+            " Server is currently broken."
         ],
         project_element(
             title="RuVoLA",
