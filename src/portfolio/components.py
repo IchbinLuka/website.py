@@ -124,6 +124,14 @@ def project_element(
     return content_element[
         h1(css(margin_top=0))[title],
         *children,
-        div(css(display="flex", flex_direction="row"))[*interaction_children],
+        div(css(display="flex", flex_direction="row"))[
+            *(
+                a(css("overlayButton"), href=item.link)[
+                    img(src=item.icon, alt=item.title),
+                    item.title,
+                ]
+                for item in interaction_items
+            )
+        ],
         slot,
     ].set_slot(slot)

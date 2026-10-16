@@ -19,6 +19,7 @@ from portfolio.constants import (
     SPACE_GAME_RELEASES,
     SPACE_GAME_SOURCE_CODE,
     SPACE_GAME_URL,
+    TANK_GAME_SOURCE_CODE,
     TANK_GAME_URL,
     WEBSITE_SOURCE_CODE_URL,
 )
@@ -174,6 +175,7 @@ def free_time_projects():
             title="Tanks 3D",
             image="images/tank_game_screenshot.png",
             interaction_items=[
+                source_code_interaction_item(TANK_GAME_SOURCE_CODE),
                 play_interaction_item(TANK_GAME_URL),
             ],
         )[
